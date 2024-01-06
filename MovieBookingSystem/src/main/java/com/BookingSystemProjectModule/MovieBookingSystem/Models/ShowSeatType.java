@@ -11,9 +11,9 @@ import lombok.Setter;
 @Setter
 @Entity(name = "show_seat_type")
 public class ShowSeatType extends BaseModel{
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Show currentShow;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private SeatType seatType;
     private int price;
 

@@ -20,7 +20,13 @@ public class Show extends BaseModel{
     @Enumerated(EnumType.ORDINAL)
     private ShowStatus showStatus;
     @Enumerated(EnumType.ORDINAL)
-    private Language language;;
+    private Language language;
+    @OneToMany(mappedBy = "currentShow",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<ShowSeat> showSeats;
+    @OneToMany(mappedBy = "currentShow",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<ShowSeatType> showSeatTypes; //<-- List of ShowSeatType objects, each representing a type of seat in the auditorium. Each ShowSeatType object has a name, price, and number of seats available. This list is used to populate the ShowSeatType dropdown in the Show form.
+
+
 
 
 }

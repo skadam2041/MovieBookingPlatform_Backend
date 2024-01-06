@@ -19,5 +19,7 @@ public class SeatType extends BaseModel{
     @OneToMany(mappedBy = "seatType", cascade = CascadeType.ALL)
     private List<Seat> seat;
     private String seatName;
+    @OneToMany(mappedBy = "seatType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ShowSeatType> showSeatType;
 
 }

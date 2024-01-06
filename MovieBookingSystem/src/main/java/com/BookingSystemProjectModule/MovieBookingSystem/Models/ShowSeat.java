@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @Entity(name = "showSeat")
 public class ShowSeat extends BaseModel{
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Show currentShow;
     @ManyToOne
     private Seat currentSeat;
